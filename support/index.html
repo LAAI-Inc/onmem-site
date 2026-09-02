@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support · 支援 — OnMem Photos</title>
+<link rel="canonical" href="https://onmem.laai.ai/support/">
+<style>
+:root { color-scheme: light dark; }
+body { margin: 0; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+       "PingFang TC", "Noto Sans TC", sans-serif; background: #fff; color: #1d1d1f; }
+@media (prefers-color-scheme: dark) { body { background: #111; color: #e6e6e6; } a { color: #8ab4f8; } }
+main { max-width: 42em; margin: 0 auto; padding: 1.5em 1.25em 4em; }
+nav.lang { max-width: 42em; margin: 0 auto; padding: 1em 1.25em 0; font-size: 0.95em; }
+nav.lang a + a::before { content: " · "; }
+h1 { font-size: 1.8em; margin-top: 1.2em; }
+h2 { font-size: 1.3em; margin-top: 1.8em; }
+h3 { font-size: 1.05em; margin-top: 1.4em; }
+table { border-collapse: collapse; margin: 1em 0; }
+td, th { border: 1px solid #bbb; padding: 0.35em 0.7em; text-align: left; vertical-align: top; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; }
+hr { border: 0; border-top: 1px solid #bbb; margin: 3em 0; }
+footer { max-width: 42em; margin: 0 auto; padding: 0 1.25em 3em; font-size: 0.9em; opacity: 0.8; }
+</style>
+</head>
+<body>
+<nav class="lang"><a href="#en">English</a><a href="#zh-Hant">繁體中文</a></nav>
+<main>
+<section id="en" lang="en">
+<h1>Support</h1>
+<h2>What this app is</h2>
+<p>It backs up the photos your phone cannot hold onto your own external drive, and lets you find them again by describing them in a sentence. No cloud, no subscription, no account.</p>
+<p>Search is semantic: you describe what is in the picture ("beach", "ramen", "snow") and it finds those pictures, not file names or tags.</p>
+<h2>First use</h2>
+<ol>
+<li><strong>Connect an exFAT external drive</strong> (USB-C, or through an adapter). Without a drive the app shows one screen and one button, "Add External Drive"; everything else waits for the drive.</li>
+<li>Tap "Add External Drive", pick the top level of the drive in the system file picker, and give it a name.</li>
+<li>Go to Settings → Licence, paste the licence key and tap Activate. It takes effect immediately; no restart. For beta builds the key is in TestFlight's "What to Test".</li>
+<li>Tap Back Up and choose the photos for this backup. This is when iOS asks for photo library permission; full or limited access both work, and with limited access the app only sees the photos you picked. If your originals are in iCloud, the app asks whether to back up only what is on the device or to download and back up everything.</li>
+<li>Go to Settings → Index and tap Build Index. Photos appear on the main screen, and search has something to find, only after this finishes.</li>
+</ol>
+<h2>Frequently asked questions</h2>
+<h3>Nothing happens when I plug in the drive</h3>
+<p>The three usual causes, in order:</p>
+<ul>
+<li><strong>Wait a few seconds.</strong> iOS needs a moment after connection before the app can see the drive.</li>
+<li><strong>Format.</strong> The drive must be <strong>exFAT</strong>. iPhone cannot mount NTFS drives, so they never appear in the picker. FAT32 works, but no single file can exceed 4 GB.</li>
+<li><strong>Read-only.</strong> A drive locked read-only cannot open the library.</li>
+</ul>
+<h3>Why do I need a licence key?</h3>
+<p>Without a key you can still back up photos and browse what has been backed up; building the index, search, albums, categories and duplicates need a key. Photos already backed up never disappear or get locked because a key is missing.</p>
+<h3>How long does indexing take?</h3>
+<p>It depends on the number of photos and the phone. Thousands of photos take a while.</p>
+<p>Keep the screen on and the app in the foreground while it runs — <strong>it does not continue in the background</strong>. You can tap Stop at any time; progress is kept, and the next time you open the app it continues on its own. When the button changes to "Check for New Photos", the run is complete.</p>
+<p>Indexing does not need the drive connected: it works from what is already on the device.</p>
+<h3>Does it work with the drive unplugged?</h3>
+<p>Search and thumbnails work — the index and thumbnails live on the device. Viewing a photo at full size, backing up new photos, favouriting and sharing need the drive.</p>
+<h3>Why can't I find a photo I know is there?</h3>
+<p>Semantic search does not guarantee every photo is found. Known today:</p>
+<ul>
+<li><strong>Short terms beat long sentences</strong> ("beach" over "sunset at the beach").</li>
+<li><strong>Two things combined</strong> ("a dog at the beach") is noticeably weaker than one concept.</li>
+<li>The photo may not be backed up or indexed yet — check Settings → Index.</li>
+</ul>
+<p>If the app says nothing matches, it offers two buttons: one shows the closest results anyway, the other retries with a shorter term.</p>
+<h3>Why can't I search for text in a photo, a person, or a place?</h3>
+<p>This version has no text recognition, no face recognition (it builds no profile of anyone), and no search by place, season, time or video content. Search can find concepts like "child" or "group photo", but cannot say who.</p>
+<h3>Are my photos uploaded?</h3>
+<p>No. The app makes no network requests. Photos are copied only from your phone to your drive. Details in the <a href="/privacy-policy/">privacy policy</a>.</p>
+<h3>Will photos in my phone's library be deleted or changed?</h3>
+<p>No. The app only reads your library; it never deletes, edits or moves a photo. Clearing backed-up photos off the phone is something you do yourself in the Photos app.</p>
+<h3>Where do photos I delete in the app go?</h3>
+<p>To Recently Deleted on the drive. They can be restored for 30 days; after that they are removed from the drive.</p>
+<h3>Can my family share one drive?</h3>
+<p>Yes. Each person adds the same drive on their own phone. Everyone sees the same photos, and who deleted what.</p>
+<h3>The drive was reformatted</h3>
+<p>The photos on it are gone, and the app no longer recognises it as the same drive — formatting replaces the drive's identifier. Add it again as a new drive.</p>
+<h3>How do I remove the drive or clear the index?</h3>
+<p>Settings lets you remove the drive: nothing on the drive is deleted, and you can add it again later by picking its folder once more. Settings → Index lets you rebuild the index. To clear everything the app created on the device (index, thumbnails, key) at once, delete the app. Files on the drive are unaffected.</p>
+<h3>The app takes a lot of space</h3>
+<p>The app includes a model of about 730 MB, which is what makes on-device semantic search possible. The index and thumbnails are extra. Keep about 2 GB free.</p>
+<h2>Requirements</h2>
+<table>
+<tbody>
+<tr><td>Device</td><td>iPhone 15 or later</td></tr>
+<tr><td>System</td><td>iOS 17 or later (query translation needs iOS 26 and an installed language pack)</td></tr>
+<tr><td>Drive</td><td>exFAT external drive, USB-C or through an adapter</td></tr>
+<tr><td>Space</td><td>about 2 GB free</td></tr>
+<tr><td>Languages</td><td>Traditional Chinese, English</td></tr>
+<tr><td>Network</td><td>needed to install; afterwards only when you choose "Download and Back Up Everything", when iOS fetches originals from iCloud</td></tr>
+</tbody></table>
+<h2>Contact</h2>
+<p>To report a problem or make a suggestion: <strong>support@laai.ai</strong></p>
+<p>For a problem report, please include: phone model, iOS version, drive model and capacity, roughly how many photos, what you did, what you expected, and what you saw. A screenshot helps.</p>
+<p>Beta testers: please use TestFlight's built-in "Send Beta Feedback" first; it attaches the device model and iOS version automatically.</p>
+</section>
+<hr>
+<section id="zh-Hant" lang="zh-Hant">
+<h1>支援</h1>
+<h2>這個 App 是什麼</h2>
+<p>把手機放不下的照片備份到你自己的外接硬碟，然後用一句話就能找回來——不需要雲端、不需要訂閱、不需要帳號。</p>
+<p>搜尋是語意的：你描述照片裡有什麼（「海邊」「拉麵」「下雪」），它就找那些畫面，不是找檔名或標籤。</p>
+<h2>第一次使用</h2>
+<ol>
+<li><strong>接上一顆 exFAT 格式的外接硬碟</strong>（USB-C，或用轉接頭）。沒接硬碟的時候，App 只有一個畫面和一顆「加入外接硬碟」按鈕，其他功能都要等硬碟。</li>
+<li>按「加入外接硬碟」，在系統的檔案選取器裡選到硬碟的最上層，替它取個名字。</li>
+<li>到「設定」→「授權」貼上授權金鑰，按「啟用」。貼上就生效，不用重開 App。測試版的金鑰寫在 TestFlight 的「測試詳情」裡。</li>
+<li>按「備份」，挑這次要備份的照片。這時 iOS 才會問相簿權限；選「允許完整取用」或「限制取用⋯」都可以，後者 App 只看得到你挑的那些。如果你的原檔在 iCloud 上，App 會問你要只備份裝置上已有的、還是「下載並備份全部」。</li>
+<li>到「設定」→「索引」按「建立索引」。跑完之後，主畫面才會出現照片，搜尋才有東西可找。</li>
+</ol>
+<h2>常見問題</h2>
+<h3>插上硬碟沒反應</h3>
+<p>三個最常見的原因，依序檢查：</p>
+<ul>
+<li><strong>再等幾秒。</strong> 插上之後 iOS 需要一點時間才會讓 App 看到硬碟。</li>
+<li><strong>格式。</strong> 硬碟要是 <strong>exFAT</strong>。NTFS 的硬碟 iPhone 掛不起來，選取器裡根本不會出現。FAT32 用得了，但單一檔案不能超過 4 GB。</li>
+<li><strong>唯讀。</strong> 硬碟如果被鎖成唯讀，照片庫打不開。</li>
+</ul>
+<h3>為什麼要輸入授權金鑰？</h3>
+<p>沒有金鑰時，你仍然可以備份照片、瀏覽已經備份的照片；建立索引、搜尋、相簿、分類和重複照片要有金鑰。已經備份的照片不會因為沒有金鑰而消失或被鎖住。</p>
+<h3>建立索引要多久？</h3>
+<p>取決於照片張數與機型，幾千張需要一段時間。</p>
+<p>索引期間請讓螢幕開著、App 停在前景——<strong>它不會在背景繼續跑</strong>。你隨時可以按「停止」，進度不會遺失；下次打開 App 它會自己接著跑，不用再按一次。按鈕變成「檢查新照片」就表示這一輪跑完了。</p>
+<p>硬碟沒插著也能建立索引：索引用的是已經在裝置上的資料。</p>
+<h3>貼完金鑰，畫面還是空的</h3>
+<p>正常。照片要備份並索引完才會出現。</p>
+<h3>拔掉硬碟還能用嗎？</h3>
+<p>能搜尋，能看縮圖——索引和縮圖存在裝置上。看大圖、備份新照片、加最愛或分享，要把硬碟接回來。</p>
+<h3>為什麼找不到某張我知道存在的照片？</h3>
+<p>語意搜尋不保證每一張都找得到。目前已知：</p>
+<ul>
+<li><strong>短詞比長句好</strong>（「海邊」比「海邊的日落」好找）。</li>
+<li><strong>兩件事湊起來的查詢</strong>（「海邊的狗」）明顯比單一概念差。</li>
+<li>那張照片還沒被備份或索引到——到「設定」→「索引」看看跑完了沒。</li>
+</ul>
+<p>如果 App 說「相簿裡找不到」，它會給你兩顆按鈕：一顆端出最接近的結果，一顆用比較短的詞再找一次。</p>
+<h3>為什麼搜不到照片裡寫的字、某個人、某個地方？</h3>
+<p>這一版沒有文字辨識，沒有人臉辨識（也不會替任何人建檔），也不支援用地點、季節、時間或影片內容搜尋。搜尋可以找到「小孩」「合照」這類概念，但無法指定是誰。</p>
+<h3>我的照片會被上傳嗎？</h3>
+<p>不會。App 不發出任何網路請求。照片只從你的手機複製到你的硬碟。細節見<a href="/privacy-policy/">隱私政策</a>。</p>
+<h3>我的手機相簿裡的照片會被刪掉或改掉嗎？</h3>
+<p>不會。App 只讀取你的相簿，不會刪除、修改或搬移任何一張照片。備份完之後要不要從手機上清掉，是你自己在「照片」App 裡做的事。</p>
+<h3>在 App 裡刪掉的照片去哪了？</h3>
+<p>進硬碟上的「最近刪除」，30 天內可以還原；30 天後才真的從硬碟上刪掉。</p>
+<h3>家人可以共用一顆硬碟嗎？</h3>
+<p>可以。每個人在自己的手機上加入同一顆硬碟，大家看到一樣的照片，也看得到誰刪了什麼。</p>
+<h3>硬碟重新格式化了</h3>
+<p>上面的照片就沒了，App 也認不出它是同一顆硬碟——格式化把硬碟的識別碼一起換掉了。請把它當成一顆新硬碟重新加入。</p>
+<h3>怎麼移除硬碟或清掉索引？</h3>
+<p>「設定」裡可以移除硬碟：硬碟上的照片不會被刪除，之後可以再加入，但要重新選一次資料夾。 「設定」→「索引」可以重新建立索引。 要把裝置上 App 產生的所有東西（索引、縮圖、金鑰）一次清掉，把 App 刪除即可——硬碟上的檔案不受影響。</p>
+<h3>App 佔的空間好像很大</h3>
+<p>App 本身包含一個約 730 MB 的模型，那是在你的裝置上做語意搜尋所必需的。索引與縮圖另外計算。建議保留約 2 GB 可用空間。</p>
+<h2>系統需求</h2>
+<table>
+<tbody>
+<tr><td>裝置</td><td>iPhone 15 以上</td></tr>
+<tr><td>系統</td><td>iOS 17 以上（搜尋字翻譯需要 iOS 26 與已安裝的語言包）</td></tr>
+<tr><td>硬碟</td><td>exFAT 格式的外接硬碟，USB-C 或轉接頭</td></tr>
+<tr><td>空間</td><td>約 2 GB 可用空間</td></tr>
+<tr><td>語言</td><td>繁體中文、英文</td></tr>
+<tr><td>網路</td><td>安裝時需要；之後只有你選「下載並備份全部」時 iOS 會向 iCloud 取回原檔</td></tr>
+</tbody></table>
+<h2>聯絡我們</h2>
+<p>回報問題或提出建議，請寄到：<strong>support@laai.ai</strong></p>
+<p>如果是回報問題，請一併告訴我們：手機型號、iOS 版本、硬碟型號與容量、相簿大概幾張，以及你做了什麼、預期看到什麼、實際看到什麼。有截圖最好。</p>
+<p>測試版的使用者請優先用 TestFlight 內建的「傳送 Beta 版意見回饋」，它會自動附上機型與系統版本。</p>
+</section>
+</main>
+<footer>OnMem Photos · <a href="/privacy-policy/">Privacy Policy 隱私政策</a> · <a href="/support/">Support 支援</a></footer>
+</body>
+</html>
